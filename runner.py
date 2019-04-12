@@ -1,6 +1,7 @@
 from grid import Grid
 from animator import Animator
 from updater import Updater
+from initiator import Gosper
 
 
 def main():
@@ -8,8 +9,8 @@ def main():
     :returns: Thenga
 
     """
-    N = 20
-    the_grid = Grid(N).grid
+    N = 100
+    the_grid = Grid(N).Init(Gosper).grid
     nexter = Updater().update
     Animator(nexter, the_grid)
 
