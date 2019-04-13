@@ -1,15 +1,19 @@
 import numpy as np
+import logging
+LOGGER = logging.getLogger(__name__)
 
 
 class Empty():
     """Empty grid generator"""
     def __init__(self, N):
         self.grid = np.zeros(N * N).reshape(N, N) 
+        LOGGER.info("Grid with empty pattern initialized")
 
 class Random():
     """Random grid generator"""
     def __init__(self, N):
         self.grid = np.random.choice((0,1), N * N, p=[0.2, 0.8]).reshape(N, N)
+        LOGGER.info("Grid with random pattern initialized")
 
 class Glider(Empty):
     """Glider grid generator"""
@@ -26,7 +30,7 @@ class Glider(Empty):
                            [255,  0, 255],  
                            [0,  255, 255]]) 
         self.grid[i:i + 3, j:j + 3] = glider 
-
+        LOGGER.info("Grid with Glider pattern initialized")
         return self
 
 class Gosper(Empty):
@@ -67,4 +71,5 @@ class Gosper(Empty):
         gun[4][35] = gun[4][36] = 1
 
         self.grid[i:i + 11, j:j + 38] = gun 
+        LOGGER.info("Grid with Gosper pattern initialized")
         return self

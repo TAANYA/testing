@@ -1,6 +1,10 @@
+import logging
+LOGGER = logging.getLogger(__name__)
+
 class Updater(object):
     """Updater class which contains function to update"""
     def __init__(self):
+        LOGGER.info("Updater Initialized")
         pass
         
     @staticmethod
@@ -14,6 +18,7 @@ class Updater(object):
         """
         N = len(grid)
         newGrid = grid.copy() 
+        LOGGER.info("updating....")
         for i in range(N): 
             for j in range(N): 
       
