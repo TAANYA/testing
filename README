@@ -1,0 +1,6 @@
+Python implementation of Conway's game of life: http://pi.math.cornell.edu/~lipa/mec/lesson6.html
+
+Code derived from https://www.geeksforgeeks.org/conways-game-life-python-implementation/
+
+Run the code by executing:
+$python runner.py
